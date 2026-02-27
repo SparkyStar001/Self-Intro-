@@ -1,0 +1,96 @@
+@media (max-width : 1628px) {
+    .gaming-container {
+        height: 50%;
+    }
+
+    .data_handeling,
+    .web_dev {
+        width: 40%;
+        margin: auto 0.1vh auto 0.1vh;
+    }
+
+    .codes {
+        margin-top: 0vh;
+    }
+
+    .project-card.Hashing {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    header {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .project-card.Hashing {
+        display: grid;
+    }
+}
+
+@media (max-width: 1120px) {
+    .project-card.Hashing {
+        display: none;
+    }
+}
+
+
+@media (max-height: 1170px) {
+    .carousel {
+        margin-top: 0%;
+        height: 120%;
+    }
+}
+
+@media (max-height: 945px) {
+    .gaming {
+        height: 80%;
+    }
+
+    .card {
+        flex: 0 0 12.5em;
+        border-radius: 1rem;
+    }
+}
+
+@media (max-height: 800px) {
+    .Scroller {
+        gap: 0.1em;
+    }
+}
+
+@media (max-height: 900px) {
+    header {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        margin-left: 0%;
+    }
+}
+
+@media (max-height: 770px) {
+    .Scroller {
+        gap: 0.01em;
+    }
+}
+
+@media (max-width: 735px) {
+    .project-card.more {
+        display: none;
+    }
+}
+
+@media (max-height: 720px) {
+    .carousel {
+        display: none;
+    }
+}

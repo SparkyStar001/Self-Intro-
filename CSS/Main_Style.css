@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Keania+One&family=Metal+Mania&family=Monoton&display=swap');
+
+:root {
+    --sidebar-width: 30vw;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    overflow: hidden;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    margin-left: 30vw;
+    border: 2px solid #121212;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 100vh;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-timeline-name: mainScroll;
+    scroll-timeline-axis: block;
+}
+
+/* .theme-btn {
+    display: flex;
+    position: fixed;
+    width: 3vw;
+    height: 3vw;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    align-self: flex-end;
+    background: transparent;
+    padding: 5px 5px 5px 5px;
+    transition: 0.3s;
+    box-shadow: 2px 2px 1vh black;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+.btn{
+    position: fixed;
+    bottom: 2%;
+    right: 10%;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+} */
+
+.mail {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.mail img {
+    display: flex;
+    border-radius: 50%;
+    pointer-events: auto;
+    max-width: 4vw;
+    width: 4vw;
+    z-index: 100;
+    box-shadow: 2px 2px 1vh black;
+    background: transparent;
+    transition: transform 0.1s ease-in-out;
+}
+
+.mail img:hover {
+    box-shadow: 2px 2px 1vh white;
+    transform: scale(1.1);
+}
+
+.scrollwatcher {
+    height: 0.2vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: rgb(255, 0, 0);
+    scale: 0 1;
+    width: 100%;
+    transform-origin: left;
+}
+
+.First-slide {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: "Keania One", "Metal Mania", sans-serif;
+}
+
+.First-slide h1 {
+    font-size: clamp(1rem, 4rem, 5rem);
+    color: #5bb4ff;
+    text-shadow: 0 0 1rem white;
+    animation: firstglow 10s infinite alternate;
+}
+
+@keyframes firstglow {
+    0% {
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #777777;
+        word-spacing: 0px;
+    }
+
+    50% {
+        word-spacing: 15px;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #000000, 0 0 40px #7a7a7a;
+        word-spacing: 25px;
+    }
+}
+
+.Fifth-slide,
+.Second-slide {
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+.card_container {
+    display: flex;
+    gap: 5vw;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.Second-slide .about_me,
+.Second-slide .skill {
+    height: clamp(20vh, 60vh, 70vh);
+    width: clamp(30vh, 40%, 70vh);
+    align-content: center;
+    justify-content: space-between;
+    border: 0.3vh solid #444444;
+    text-wrap: balance;
+    border-radius: 4vh;
+    color: #FFFFFF;
+    background: linear-gradient(145deg, #000000, #333333);
+    padding: clamp(2vh, 8%, 6vh);
+    text-align: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    font-family: "DM Serif Text", "Keania One";
+    transition: all 0.2s ease-in-out;
+}
+
+.Second-slide h3 {
+    margin-top: 1vh;
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-family: "Keania One", "Metal Mania";
+}
+
+.about_me h3::before,
+.skill h3::before {
+    content: "『  ";
+}
+
+.Second-slide h3:hover,
+.about_me h3::after,
+.skill h3::after {
+    content: " 』";
+}
+
+.Second-slide .skill li {
+    list-style: none;
+    margin-top: clamp(3vh, 6vh, 8vh);
+}
+
+.Second-slide .skill li ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: clamp(1vh, 5%, 3vh);
+    padding: 1vh 2vw;
+    background: rgba(26, 26, 26, 0.322);
+    border: .2rem solid #444444;
+    font-size: clamp(1rem, 1.3rem, 1.5rem);
+    border-radius: 10px;
+    text-shadow: 0 0 10px #302e2e;
+    transition: all 0.3s ease;
+}
+
+.Second-slide .skill li ul:hover {
+    box-shadow: 0 0 20px #d6d3d3;
+    transform: translateY(-3px);
+    text-shadow: 0 0 10px rgb(27, 26, 26);
+}
+
+.Second-slide .about_me:hover,
+.Second-slide .skill:hover {
+    box-shadow: 0 0 5vh rgb(131, 130, 130);
+    transform: scale(1.01);
+    transform: translateY(-8px);
+    background: linear-gradient(145deg, rgb(16, 16, 16), rgb(24, 24, 24));
+}
+
+.Second-slide .about_me p {
+    margin: 5%;
+    text-align: center;
+}
+
+.Second-slide .skill li ul,
+.Second-slide .about_me p {
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
+    overflow-y: auto;
+    width: 90%;
+    max-height: 75%;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .Second-slide .about_me:hover,
+    .Second-slide .skill:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+.Third-slide {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    font-family: "Keania One", sans-serif;
+}
+
+.Editing,
+.gaming {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #5a5a5a;
+    padding: 2vh 2vw;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    z-index: 1;
+    height: clamp(20vh, 70%, 70vh);
+    width: clamp(20vh, 90%, 100vh);
+    background: linear-gradient(to bottom, #000000, #333333);
+    backdrop-filter: blur(6px);
+    border-radius: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.gaming h2 {
+    font-size: clamp(2rem, 2vw, 4rem);
+    color: #5bb4ff;
+    text-shadow: 0 0 3px whitesmoke;
+}
+
+.gaming p {
+    margin-top: 1vh;
+    font-size: clamp(1.8rem, 10%, 5rem);
+}
+
+.gaming-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    max-height: 500px;
+    width: 100%;
+    height: 56%;
+}    
+
+.carousel {
+    width: clamp(20vw, 100%, 110vw);
+    overflow: hidden;
+    border-radius: 1rem;
+    gap: 1em;
+    background: rgba(0, 0, 0, 0.300);
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, transparent 100%);
+}
+
+.Scroller {
+    display: flex;
+    gap: 1rem;
+    padding-block: 1rem;
+    flex-wrap: nowrap;
+    height: 45vh;
+    background: rgba(24, 24, 24, 0.522);
+    width: max-content;
+    /* border:2px solid green ; */
+}
+
+.card {
+    border:2px solid rgb(255, 255, 255) ;
+    display: flex;
+    flex: 0 0 13em;
+    aspect-ratio: 9/16;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    flex-shrink: 0;
+    height: clamp(10vh, 80%, 70vh);
+    width: clamp(10vh, 95%, 110vh);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card img {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.card h2 {
+    z-index: 1000;
+    color: #8bc9ff;
+    text-shadow: 0 0 100vw #ffffff;
+    font-size: clamp(2rem, 80%, 5rem);
+}
+
+.Scroller:has(.card img:hover) {
+    animation-play-state: paused;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.Editing:hover,
+.gaming:hover {
+    box-shadow: 0 0 20px rgba(91, 180, 255, 0.4);
+    transform: scale(1.02);
+}
+
+.Fourth-slide {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-family: "Keania One", "Metal Mania", sans-serif;
+}
+
+.First-slide,
+.Second-slide,
+.Third-slide,
+.Fourth-slide,
+.Fifth-slide,
+.Sixth-slide {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.Second-slide>img,
+.Third-slide>img,
+.Fourth-slide>img,
+.Fifth-slide>img,
+.Sixth-slide>img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0.2;
+    pointer-events: none;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, black 10%, transparent 100%);
+    mask-image: linear-gradient(to right, black 10%, transparent 100%);
+}
+
+.First-slide>img {
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    left: 0;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.Third-slide>img {
+    width: 100%;
+    left: 0;
+    top: 0;
+    -webkit-mask-image: linear-gradient(to center, black 10%, transparent 100%);
+    mask-image: linear-gradient(to center, black 10%, transparent 100%);
+}
+
+.Fifth-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    background: #0e0e0e;
+    padding: 6vh 2vw;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Editing {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 78%;
+    align-items: center;
+}
+
+.Fifth-slide h2 {
+    font-size: clamp(1rem, 2vw, 3rem);
+    color: #5bb4ff;
+    isolation: isolate;
+    text-shadow: 0 0 3px whitesmoke;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.Fifth-slide p {
+    font-family: "DM Serif Text", "Keania One";
+    color: #e3e3e3;
+    max-width: 90vh;
+    width: 80%;
+    margin-top: 1vh;
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: 1.5rem;
+}
+
+.content {
+    display: flex;
+    gap: 2vw;
+    margin-top: 2vh;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.Video_Editing,
+.Photo_Editing {
+    background: linear-gradient(145deg, #000000, #333333);
+    border: 2px solid #ffffff;
+    border-radius: 0.8rem;
+    padding: 2.5vh 2vw;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    flex: 1 1 48%;
+}
+
+.Languages li,
+.Video_Editing li,
+.Photo_Editing li {
+    margin-top: clamp(1vh, 1.2vh, 1.5vh);
+}
+
+.Video_Editing:hover,
+.Photo_Editing:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(91, 180, 255, 0.4);
+}
+
+.content h3 {
+    font-weight: 700;
+    color: #5bb4ff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.Video_Editing ul,
+.Photo_Editing ul {
+    list-style: none;
+    padding: 0;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0.5vh 0;
+}
+
+.view-text {
+    position: absolute;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 10;
+}
+
+.view-text h3 {
+    z-index: 100;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-shadow: 0 0 5px#ffffff;
+}
+
+.Sixth-slide {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background: #0e0e0e;
+    padding: 6vh 2vw;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Sixth-slide .content {
+    justify-content: center;
+}
+
+.Sixth-slide h2 {
+    font-size: clamp(1rem, 2vw, 3rem);
+    color: #5bb4ff;
+    text-shadow: 0 0 3px whitesmoke;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.Languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    background: linear-gradient(145deg, #000000, #333333);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 20px rgba(91, 180, 255, 0.4);
+    border-radius: 0.8rem;
+    justify-content: center;
+    padding: 2.5vh 2vw;
+    text-align: center;
+    transition: all 0.3s ease;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: clamp(40vh, 50%, 50vh);
+    max-width: clamp(80vw, 95%, 98vw);
+    flex: 1 1 48%;
+}
+
+.Languages h3 {
+    margin-top: clamp(1vh, 1.2vh, 1.5vh);
+}
+
+.data_handeling,
+.web_dev {
+    width: 45%;
+    align-self: center;
+    border: 1px solid #8a8a8a;
+    background: linear-gradient(145deg, #00000098, #33333398);
+    border-radius: 1vh;
+    isolation: isolate;
+    font-size: 1.1rem;
+    box-shadow: 0 0 1vh #333333;
+    transition: all 0.3s ease-in-out;
+}
+
+.data_handeling ul,
+.web_dev ul {
+    margin-top: clamp(2vh, 2.2vh, 3.5vh);
+    margin-bottom: clamp(2vh, 2.2vh, 3.5vh);
+}
+
+.data_handeling ul li,
+.web_dev ul li {
+    list-style: none;
+    line-height: 3vh;
+}
+
+.data_handeling:hover,
+.web_dev:hover {
+    transform: scale(1.03);
+    background: linear-gradient(145deg, #000000, #333333);
+    box-shadow: 0 0 20px rgba(91, 180, 255, 0.4);
+    transform: translateY(-0.4vh);
+}
+
+.content {
+    margin-bottom: 10vh;
+}
+
+.codes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1100px;
+    margin-top: clamp(1vh, 2vh, 3vh);
+}
+
+.project-card {
+    background: linear-gradient(145deg, rgb(16, 16, 16), rgb(24, 24, 24));
+    backdrop-filter: none;
+    isolation: isolate;
+    border: 1px solid #2a2a2a;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    border-color: #555;
+}
+
+.project-card h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    color: #c7c7c7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #4da6ff;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.project-card a:hover {
+    border-bottom: 1px solid #4da6ff;
+    text-shadow: 0 0 10px #4da6ff;
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / -1;
+    padding: 3.4rem 0 2rem;
+    height: clamp(3vh, 30%, 5vh);
+}
+
+.more p {
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+}
