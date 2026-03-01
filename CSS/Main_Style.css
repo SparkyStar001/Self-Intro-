@@ -122,7 +122,6 @@ main {
 
 .Second-slide .about_me,
 .Second-slide .skill {
-    /* height: clamp(20vh, 60vh, 70vh); */
     height: 60vh;
     width: clamp(30vh, 40%, 70vh);
     align-content: center;
@@ -641,4 +640,5 @@ main {
     text-align: center;
     color: rgba(255, 255, 255, 0.85);
 }
+
 
