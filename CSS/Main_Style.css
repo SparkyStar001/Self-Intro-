@@ -22,7 +22,6 @@ main {
     overflow-x: hidden;
     min-height: 100vh;
     height: 100vh;
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     scroll-timeline-name: mainScroll;
     scroll-timeline-axis: block;
@@ -640,5 +639,6 @@ main {
     text-align: center;
     color: rgba(255, 255, 255, 0.85);
 }
+
 
 
